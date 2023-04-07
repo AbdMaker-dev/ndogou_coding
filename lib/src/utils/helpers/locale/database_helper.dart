@@ -1,6 +1,8 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+import '../../contantes/db_tables.dart';
+
 class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._();
   Database? _database;
@@ -26,12 +28,18 @@ class DatabaseHelper {
 
   Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
-      CREATE TABLE tasks(
+      CREATE TABLE $infosTable(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        author TEXT,
         title TEXT,
-        completed INTEGER
+        description TEXT,
+        urlToImage TEXT,
+        publishedAt TEXT,
+        content TEXT
       )
     ''');
+
+    // CREATE OTHER TABLES ....
   }
 
   Future<int> saveSomeData(String tableName, Map<String, dynamic> data) async {
