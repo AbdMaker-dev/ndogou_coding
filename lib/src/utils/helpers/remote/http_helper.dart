@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 
 class HttpHelper extends Interceptor {
+  // https://newsapi.org/v2/everything?q=tesla&from=2023-03-07&sortBy=publishedAt&apiKey=821440346a494e7dab7afed916f44fac
   final String BASE_URL ="https://newsapi.org/v2/top-headlines?country=fr&apiKey=821440346a494e7dab7afed916f44fac";
   Dio _dio = Dio();
   RequestOptions? rOptions;
