@@ -42,7 +42,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  Future<void> _incrementCounter() async {
+    //Task newTask = Task(title: 'Nouvelle tâche', completed: false);
+    //int taskId = await DatabaseHelper.instance.saveSomeData("tasks", newTask.toMap());
+    //print('ID de la tâche insérée : $taskId');
+    //print(await DatabaseHelper.instance.getSomeDataByID("tasks", 1));
+    // print(await HttpHelper().doGetRequest(""));
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
