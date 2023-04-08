@@ -4,8 +4,7 @@ import 'package:path_provider/path_provider.dart';
 
 class ImageHelper {
 
-
-  Future<String> downloadAndCacheImage(String imageUrl) async {
+  static Future<String> downloadAndCacheImage(String imageUrl) async {
     DefaultCacheManager cacheManager = DefaultCacheManager();
     File imageFile = await cacheManager.getSingleFile(imageUrl);
     Directory appDir = await getApplicationDocumentsDirectory();

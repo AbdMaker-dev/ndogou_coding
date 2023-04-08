@@ -17,7 +17,7 @@ class DatabaseHelper {
   Future<Database> _initDatabase() async {
     // join() : permet de rejoindre plusieurs parties de chemins en utilisant le séparateur de répertoire approprié pour le système d'exploitation sous-jacent.
     // getDatabasesPath() : permet d'obtenir le chemin du dossier où les bases de données SQLite sont stockées pour l'application.
-    String path = join(await getDatabasesPath(), 'tasks.db');
+    String path = join(await getDatabasesPath(), dbName);
     return await openDatabase(
       path,
       version: 1,
