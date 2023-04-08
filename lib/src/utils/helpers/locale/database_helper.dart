@@ -41,6 +41,8 @@ class DatabaseHelper {
     // CREATE OTHER TABLES ....
   }
 
+  
+  
   // ----------- TRANSACTIONS --------------------------------------------------
   Future<int> saveSomeData(String tableName, Map<String, dynamic> data) async {
     Database db = await instance.database;
@@ -59,13 +61,14 @@ class DatabaseHelper {
     return null;
   }
 
+  Future<int> updateSomeData(String tableName, id, Map<String, dynamic> data) async {
+    Database db = await instance.database;
+    return await db.update(tableName, data, where: 'id = ?', whereArgs: [id]);
+  }
+
   Future<int> deleteSomeData(String tableName, int id) async {
     Database db = await instance.database;
-    return await db.delete(
-      tableName,
-      where: 'id = ?',
-      whereArgs: [id],
-    );
+    return await db.delete(tableName, where: 'id = ?', whereArgs: [id]);
   }
 
   Future<List<Map<String, Object?>>> getSomeData(String tableName) async {
@@ -75,9 +78,9 @@ class DatabaseHelper {
     //return List.generate(maps.length, (index) => Task.fromMap(maps[index]));
   }
 
-
-
-
+  
+  
+  
   // Future<int> insertTask(Task task) async {
   //   Database db = await instance.database;
   //   return await db.insert('tasks', task.toMap());
@@ -107,31 +110,4 @@ class DatabaseHelper {
   //     whereArgs: [id],
   //   );
   // }
-
-}
-
-class Task {
-  int? id;
-  String? title;
-  bool? completed;
-
-  Task({this.id, this.title, this.completed});
-
-  // Convertir une tâche en Map
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'title': title,
-      'completed': completed! ? 1 : 0,
-    };
-  }
-
-  // Convertir un Map en tâche
-  static Task fromMap(Map<String, dynamic> map) {
-    return Task(
-      id: map['id'],
-      title: map['title'],
-      completed: map['completed'] == 1,
-    );
-  }
 }

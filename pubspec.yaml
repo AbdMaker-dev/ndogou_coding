@@ -31,6 +31,8 @@ dependencies:
   sqflite: ^2.2.6
   dio: ^5.1.1
   flutter_cache_manager: ^3.3.0
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
 

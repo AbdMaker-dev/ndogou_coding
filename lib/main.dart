@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ndogou_coding/src/utils/contantes/db_tables.dart';
+import 'src/utils/helpers/locale/database_helper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,10 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   Future<void> _incrementCounter() async {
-    //Task newTask = Task(title: 'Nouvelle tâche', completed: false);
-    //int taskId = await DatabaseHelper.instance.saveSomeData("tasks", newTask.toMap());
-    //print('ID de la tâche insérée : $taskId');
-    //print(await DatabaseHelper.instance.getSomeDataByID("tasks", 1));
+    // Task newTask = Task(title: 'Nouvelle tâche', completed: false);
+    // int taskId = await DatabaseHelper.instance.saveSomeData("tasks", newTask.toMap());
+    // print('ID de la tâche insérée : $taskId');
+    // print(await DatabaseHelper.instance.getSomeDataByID(infosTable, 1));
     // print(await HttpHelper().doGetRequest(""));
     setState(() {
       // This call to setState tells the Flutter framework that something has
