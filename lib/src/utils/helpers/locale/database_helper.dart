@@ -1,12 +1,11 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-
 import '../../contantes/db_tables.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._();
   Database? _database;
-  DatabaseHelper._();
+  DatabaseHelper._(); // constructeur privé en Dart.
 
   Future<Database> get database async {
     if (_database == null || !_database!.isOpen) {
@@ -42,6 +41,7 @@ class DatabaseHelper {
     // CREATE OTHER TABLES ....
   }
 
+  // ----------- TRANSACTIONS --------------------------------------------------
   Future<int> saveSomeData(String tableName, Map<String, dynamic> data) async {
     Database db = await instance.database;
     return await db.insert(tableName, data);
