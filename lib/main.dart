@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ndogou_coding/src/utils/contantes/db_tables.dart';
-import 'src/utils/helpers/locale/database_helper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,9 +17,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// 821440346a494e7dab7afed916f44fac
-// https://newsapi.org/v2/everything?q=tesla&from=2023-03-07&sortBy=publishedAt&apiKey=821440346a494e7dab7afed916f44fac
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -45,11 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   Future<void> _incrementCounter() async {
-    // Task newTask = Task(title: 'Nouvelle tâche', completed: false);
-    // int taskId = await DatabaseHelper.instance.saveSomeData("tasks", newTask.toMap());
-    // print('ID de la tâche insérée : $taskId');
-    // print(await DatabaseHelper.instance.getSomeDataByID(infosTable, 1));
-    // print(await HttpHelper().doGetRequest(""));
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
