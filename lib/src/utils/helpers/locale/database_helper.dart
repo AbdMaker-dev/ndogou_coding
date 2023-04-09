@@ -44,8 +44,6 @@ class DatabaseHelper {
     // CREATE OTHER TABLES ....
   }
 
-  
-  
   // ----------- TRANSACTIONS --------------------------------------------------
   Future<int> saveSomeData(String tableName, Map<String, dynamic> data) async {
     Database db = await instance.database;
@@ -81,36 +79,4 @@ class DatabaseHelper {
     //return List.generate(maps.length, (index) => Task.fromMap(maps[index]));
   }
 
-  
-  
-  
-  // Future<int> insertTask(Task task) async {
-  //   Database db = await instance.database;
-  //   return await db.insert('tasks', task.toMap());
-  // }
-
-  // Future<List<Task>> getTasks() async {
-  //   Database db = await instance.database;
-  //   List<Map<String, dynamic>> maps = await db.query('tasks');
-  //   return List.generate(maps.length, (index) => Task.fromMap(maps[index]));
-  // }
-
-  // Future<int> updateTask(Task task) async {
-  //   Database db = await instance.database;
-  //   return await db.update(
-  //     'tasks',
-  //     task.toMap(),
-  //     where: 'id = ?',
-  //     whereArgs: [task.id],
-  //   );
-  // }
-
-  // Future<int> deleteTask(int id) async {
-  //   Database db = await instance.database;
-  //   return await db.delete(
-  //     'tasks',
-  //     where: 'id = ?',
-  //     whereArgs: [id],
-  //   );
-  // }
 }
